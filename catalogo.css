@@ -1,0 +1,48 @@
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;}
+
+body{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+
+.container{display: grid;
+grid-template-columns: 1fr ;
+grid-template-rows: 100px 500px 50px;
+grid-template-areas: "h" "m" "f";}
+
+header{background-color:#3C697C ;
+grid-area: h;
+}
+header > img{ padding-bottom: 10px;}
+
+main{
+    grid-area: m;
+    background-color: white;
+    padding: 100px 0;
+}
+
+main > input{ width: 200px;
+height: 50px;
+font-size: 1.5rem;
+border-radius: 30px;
+background-color: #3C697C;}
+
+.cards{background-color: #3C697C;
+
+display: flex;
+
+padding: 40px;
+column-gap: 50px;}
+
+.card{background-color: #8A8A8A;
+display: flex;
+flex-direction: column;
+padding: 20px;}
+
+.cardinfo{display: flex;
+justify-content: space-between;
+padding-top: 10px;}
+
+footer{
+    grid-area: f;
+    background-color: #3C697C;}
+

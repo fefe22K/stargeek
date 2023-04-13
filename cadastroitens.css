@@ -1,0 +1,37 @@
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;}
+
+body{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+
+.container{display: grid;
+    grid-template-columns: 1fr  1fr;
+    grid-template-rows: 100px 500px 50px;
+    grid-template-areas: "h h" "m s" "r r";} 
+
+    header{ grid-area: h;
+    background-color:#3C697C;}
+
+    main{ grid-area: m;
+    display: flex;
+justify-content: center;
+padding-top: 50px;}
+
+    section{ grid-area: s;
+    display: flex;
+justify-content: center;
+padding-top: 60px;}
+
+    footer{grid-area: r;
+    background-color: #3C697C;}
+
+    .card{background-color: #8A8A8A;
+      height: 370px;
+      width: 300px;
+    border-radius: 20px;}
+
+    section > div > h1{display: flex;
+    justify-content: center;
+padding-top: 150px;}
+
+        
