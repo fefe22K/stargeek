@@ -20,7 +20,7 @@ align-items: center;
 
 main{
     grid-area: p;
-    background-image: url(image\ 18fundo.png);
+    background-image: url(./imagens/image18fundo.png);
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
