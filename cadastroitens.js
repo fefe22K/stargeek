@@ -1,11 +1,14 @@
 const nome = document.getElementById("nome");
-const descricao = document.getElementById("descricao");
+const descricao = document.getElementById("idescricao");
 const foto = document.getElementById("foto");
 const botaocadastrar = document.querySelector(".btncadastrar");
 
 var url = new URL(window.location.href);
 var peditar = url.searchParams.get("peditar");
 var pindice = url.searchParams.get("indice");
+
+var emaillogado;
+femaillogado();
 
 if (peditar == "true"){
   editar(pindice);
@@ -22,7 +25,8 @@ botaocadastrar.onclick = (evento)=>{
                                       {
                                         nome: nome.value,
                                         descricao: descricao.value,
-                                        foto: nomeArq
+                                        foto: nomeArq,
+                                         email: emaillogado
                                         }
                                      )
                         localStorage.setItem("catalogo", JSON.stringify(dados));
@@ -73,6 +77,7 @@ function salvaEdicao(pfoto){
   dados[pindice].nome = nome.value;
   dados[pindice].descricao = descricao.value;
   dados[pindice].foto = pfoto;
+  dados[pindice].email = emaillogado;
   localStorage.setItem("catalogo", JSON.stringify(dados));
 
 }
@@ -85,7 +90,7 @@ async function fenvio() {
     console.log(JSON.stringify(formData.values[0]));
     console.log(JSON.stringify(formData.values[1]));
     try{
-         
+           0
          var resp = await fetch(url, {
                                        method: 'POST',
                                        body: formData,
@@ -105,4 +110,12 @@ async function fenvio() {
         console.error(error);
         return false;
       }
+}
+function femaillogado(){
+  let dados = JSON.parse(sessionStorage.getItem("logado"));
+  if (dados == null){
+      window.location.assign("login.html");
+  }else{
+      emaillogado = dados[0].email;
+  }
 }

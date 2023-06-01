@@ -2,7 +2,8 @@
     const botaomodal = document.getElementById("btn");
     const cards = document.querySelector(".cards");
   
-    
+    var emaillogado;
+    femaillogado();
     
     carregarCatalogo();
     function carregarCatalogo(){
@@ -15,6 +16,7 @@
         }
     
         dados.forEach((elemento, indice) => {
+            if(elemento.email == emaillogado){
             let divcard = document.createElement("div");
             divcard.setAttribute("class", "card")
             divcard.innerHTML =` <img src="img/${elemento.foto}" alt="serie">
@@ -29,7 +31,7 @@
             //<a onclick="excluir(${indice})">excluir</a></div>
             //</div>`;
             
-            cards.appendChild(divcard);
+            cards.appendChild(divcard);}
             
         });
     }
@@ -46,12 +48,20 @@
     }
     
     function editar(indice){
-        var url ="cadastro.html?peditar=true&indice="+ encodeURIComponent(indice);
+        var url ="cadastroitens.html?peditar=true&indice="+ encodeURIComponent(indice);
         window.location.href = url;
     }
     
-    botaomodal.onclick = () =>{
-        window.location.assign("cadastro.html");
+    botaomodal.onclick = ()=>{
+        window.location.assign("cadastroitens.html");
     }
     
+    function femaillogado(){
+        let dados = sessionStorage.getItem("logado");
+        if (dados == null){
+            window.location.assign("login.html");
+        }else{
+            emaillogado = dados;
+        }
+    }
     
