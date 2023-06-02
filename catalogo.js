@@ -10,7 +10,7 @@
         let dados = JSON.parse(localStorage.getItem("catalogo"));
         let divcard = document.createElement("div");
         if(dados == null){
-            divcard.innerHTML = "<p>Nenhum item cadsatrado</p>";
+            divcard.innerHTML = "<p>Nenhum item cadastrado</p>";
             cards.appendChild(divcard);
             return null;
         }

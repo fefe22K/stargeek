@@ -44,7 +44,7 @@ formulario.onsubmit = (evento) =>{
     }
 
     
-    if (senha.value != csenha){
+    if (senha.value != csenha.value){
         evento.preventDefault();
         msg.innerHTML = "Digite senhas iguais"
         csenha.focus();
